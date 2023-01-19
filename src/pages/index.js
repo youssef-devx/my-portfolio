@@ -97,11 +97,6 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="coming-soon">
-          <hr />
-          <hr />
-        </div>
-
         <ContactMe />
       </main>
     </>
