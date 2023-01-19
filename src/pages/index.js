@@ -6,6 +6,7 @@ import InfoIcon from '@/Icons/InfoIcon'
 import GithubIcon from '@/Icons/GithubIcon'
 import SeeIcon from '@/Icons/SeeIcon'
 import Image1 from "../Images/Image1.png"
+import ContactMe from '@/components/ContactMe'
 
 const inter = Inter({ subsets: ['latin'] })
 const logoFont = localFont({ src: '../fonts/skirmisher.ttf' })
@@ -70,6 +71,7 @@ export default function Home() {
             developer you are in the right place
           </h1>
           <button className={inter.className}>
+            <a href="#contact-me"></a>
             <span className="before"></span>
             <span className="border"></span>
             <span>Contact</span>
@@ -78,9 +80,12 @@ export default function Home() {
             </svg>
           </button>
           <div className="projects">
-            {projects.map(project => (
-              <div className="project" key={project.link}>
-                <span className="before" style={{ background: `linear-gradient(180deg, ${project.color} 50%, transparent 100%)` }}></span>
+            <span className="before"></span>
+            <span className="border"></span>
+            {projects.slice(0, 4).map((project, idx) => (
+              <div className="project" key={project.link + idx}>
+                <span className="before" style={{ background: `linear-gradient(180deg, ${project.color} 50%, #04212C 100%)` }}></span>
+                <span className="project-border"></span>
                 <img src={Image1.src} />
                 <div className="options">
                   <SeeIcon title={project.link} />
@@ -96,6 +101,8 @@ export default function Home() {
           <hr />
           <hr />
         </div>
+
+        <ContactMe />
       </main>
     </>
   )
