@@ -1,55 +1,29 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
-import localFont from '@next/font/local'
 import InfoIcon from '@/Icons/InfoIcon'
 import GithubIcon from '@/Icons/GithubIcon'
 import GoToIcon from '@/Icons/GoToIcon'
 import Image1 from "../Images/Image1.png"
 import ContactMe from '@/components/ContactMe'
 import Link from 'next/link'
+import Logo from '@/Icons/Logo'
+import { motion } from 'framer-motion'
+import Preloader from '@/components/Preloader'
+import { useEffect, useState } from 'react'
+import importedProjects from "../projects"
 
 const inter = Inter({ subsets: ['latin'] })
-const logoFont = localFont({ src: '../fonts/skirmisher.ttf' })
 
 export default function Home() {
-  const projects = [
-    {
-      color: "#6767C3",
-      link: "#",
-      github: "https://github.com/youssef-devx/",
-      info: {
-        about: 'An API for programming posts.',
-        createdAt: new Date().toLocaleDateString(),
-      }
-    },
-    {
-      color: "#4EEA9E",
-      link: "#",
-      github: "https://github.com/youssef-devx/",
-      info: {
-        about: 'An app that allows people to do something.',
-        createdAt: new Date().toLocaleDateString(),
-      }
-    },
-    {
-      color: "#6767C3",
-      link: "#",
-      github: "https://github.com/youssef-devx/",
-      info: {
-        about: 'An API for programming posts.',
-        createdAt: new Date().toLocaleDateString(),
-      }
-    },
-    {
-      color: "#4EEA9E",
-      link: "#",
-      github: "https://github.com/youssef-devx/",
-      info: {
-        about: 'An app that allows people to do something.',
-        createdAt: new Date().toLocaleDateString(),
-      }
-    }
-  ]
+  const [preloading, setPreloading] = useState(true)
+  const [projects, setProjects] = useState(importedProjects)
+
+  useEffect(() => {
+    document.onload = () => setPreloading(false)
+    document.onload()
+
+    return () => document.onload = null
+  }, [])
 
   return (
     <>
@@ -59,13 +33,18 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${inter.className} container`}>
+      {preloading ? <Preloader /> : <main className={`${inter.className} container`}>
         <header>
           <Link href="/">
-            <h3 className={`${logoFont.className} logo`}>DEVX</h3>
+            <Logo dark={false} />
           </Link>
 
-          <div className="socials">
+          <motion.div
+            className="socials"
+            initial={{ y: "-100%" }}
+            animate={{ y: 0 }}
+            transition={{ duration: 1 }}
+          >
             <Link href="https://github.com/youssef-devx">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "rgba(255, 255, 255, 1)" }}>
                 <path
@@ -86,31 +65,34 @@ export default function Home() {
                 </path>
               </svg>
             </Link>
-          </div>
+          </motion.div>
         </header>
 
         <div className='content'>
-          <h1>
+          <motion.h1
+            initial={{  y: "100%" }}
+            animate={{ y: 0 }}
+            transition={{ duration: 1 }}
+          >
             Looking for Web Development Collaboration?
             <br />
             Whether you are a business owner or a
             <br />
             developer you are in the right place
-          </h1>
-          {/* {<Link href="/#contact-me">
-            <button className={inter.className}>
-              <span className="before"></span>
-              <span className="border"></span>
-              <span>Contact Me</span>
-              <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20.866 10.366C21.3443 9.88773 21.3443 9.11227 20.866 8.63397L13.0718 0.839746C12.5935 0.361453 11.818 0.361453 11.3397 0.839746C10.8615 1.31804 10.8615 2.0935 11.3397 2.5718L18.2679 9.5L11.3397 16.4282C10.8615 16.9065 10.8615 17.682 11.3397 18.1603C11.818 18.6385 12.5935 18.6385 13.0718 18.1603L20.866 10.366ZM0 10.7247H20V8.27526H0V10.7247Z" fill="white" />
-              </svg> */}
-          {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path></svg> */}
-          {/* </button>
-          </Link> */
-          }
-          <div className='scroll-cta'></div>
-          <div className="projects">
+          </motion.h1>
+          <motion.div
+            className='scroll-cta'
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            transition={{ duration: 1 }}
+          >
+          </motion.div>
+          <motion.div
+            className="projects"
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            transition={{ duration: 1 }}
+          >
             <span className="before"></span>
             <span className="border"></span>
             {projects.slice(0, 4).map((project, idx) => (
@@ -125,17 +107,17 @@ export default function Home() {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
 
         <ContactMe />
 
         {/* msFilter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1) */}
-        {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "rgba(255, 255, 255, 1)", transform: "scaleY(-1)", }}>
+        {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "rgba(255, 255, 255, 1)", transform: "scaleY(-1)" }}>
           <path d="M9 20h6v2H9zm7.906-6.288C17.936 12.506 19 11.259 19 9c0-3.859-3.141-7-7-7S5 5.141 5 9c0 2.285 1.067 3.528 2.101 4.73.358.418.729.851 1.084 1.349.144.206.38.996.591 1.921h-.792v2h8.032v-2h-.79c.213-.927.45-1.719.593-1.925.352-.503.726-.94 1.087-1.363z">
           </path>
         </svg> */}
-      </main>
+      </main>}
     </>
   )
 }
