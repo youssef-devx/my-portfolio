@@ -47,6 +47,11 @@ header {
   justify-content: space-between;
 }
 
+header a {
+  display: flex;
+  align-items: center;
+}
+
 h3.logo {
   font-weight: 400;
   font-size: 2rem;
@@ -369,6 +374,10 @@ textarea:focus-visible {
 }
 
 @media (max-width: 420px) {
+  .socials {
+    gap: 1rem;
+  }
+
   h1 {
     font-weight: 800;
     font-size: 1rem;
