@@ -108,7 +108,7 @@ export default function Home() {
               <div className="project" key={project.link + idx}>
                 <span className="before" style={{ background: `linear-gradient(180deg, ${project.color} 50%, #04212C 100%)` }}></span>
                 <span className="project-border"></span>
-                <img src={Image1.src} />
+                <img src={Image1.src} alt="project image" />
                 <div className="tech">
                   {project.tech.map(tag => (
                     <span

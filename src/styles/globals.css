@@ -359,6 +359,10 @@ button .before {
   aspect-ratio: 1;
 }
 
+.tech-stack img[alt="expressjs"] {
+  background-color: white;
+}
+
 /* Contact Me */
 .contact-me {
   display: flex;
