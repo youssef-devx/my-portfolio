@@ -1,4 +1,4 @@
-import Logo from '@/Icons/Logo'
+import Logo from '@/icons/Logo'
 import { motion } from 'framer-motion'
 import React from 'react'
 

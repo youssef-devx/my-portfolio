@@ -1,16 +1,17 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
-import InfoIcon from '@/Icons/InfoIcon'
-import GithubIcon from '@/Icons/GithubIcon'
-import GoToIcon from '@/Icons/GoToIcon'
-import Image1 from "../Images/Image1.png"
+import { useEffect, useState } from 'react'
+import InfoIcon from '@/icons/InfoIcon'
+import GithubIcon from '@/icons/GithubIcon'
+import GoToIcon from '@/icons/GoToIcon'
+import Image1 from "../images/Image1.png"
 import ContactMe from '@/components/ContactMe'
 import Link from 'next/link'
-import Logo from '@/Icons/Logo'
+import Logo from '@/icons/Logo'
 import { motion } from 'framer-motion'
 import Preloader from '@/components/Preloader'
-import { useEffect, useState } from 'react'
 import importedProjects from "../projects"
+import TechStack from '@/components/TechStack'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,7 +20,15 @@ export default function Home() {
   const [projects, setProjects] = useState(importedProjects)
 
   useEffect(() => {
-    document.onload = () => setPreloading(false)
+    document.onload = () => {
+      setTimeout(() => setPreloading(false), 1000)
+      // const animate = setInterval(() => {
+      // let deg = 120
+      // const angle = deg === 120 ? 120 : 180
+      // document.documentElement.style.setProperty('--gradient-angle', angle + 'deg')
+      // deg = 120
+      // }, 100)
+    }
     document.onload()
 
     return () => document.onload = null
@@ -70,7 +79,7 @@ export default function Home() {
 
         <div className='content'>
           <motion.h1
-            initial={{  y: "100%" }}
+            initial={{ y: "100%" }}
             animate={{ y: 0 }}
             transition={{ duration: 1 }}
           >
@@ -88,7 +97,7 @@ export default function Home() {
           >
           </motion.div>
           <motion.div
-            className="projects"
+            className="projects animate-gradient"
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             transition={{ duration: 1 }}
@@ -100,15 +109,27 @@ export default function Home() {
                 <span className="before" style={{ background: `linear-gradient(180deg, ${project.color} 50%, #04212C 100%)` }}></span>
                 <span className="project-border"></span>
                 <img src={Image1.src} />
+                <div className="tech">
+                  {project.tech.map(tag => (
+                    <span
+                      className="tag" style={{ backgroundColor: `${project.color}50` }}
+                      key={tag}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
                 <div className="options">
-                  <GoToIcon title={project.link} />
-                  <GithubIcon title={project.github} />
-                  <InfoIcon title={project.about} />
+                  <GoToIcon link={project.link} />
+                  <GithubIcon link={project.github} />
+                  <InfoIcon info={project.info} />
                 </div>
               </div>
             ))}
           </motion.div>
         </div>
+
+        <TechStack />
 
         <ContactMe />
 
@@ -117,7 +138,7 @@ export default function Home() {
           <path d="M9 20h6v2H9zm7.906-6.288C17.936 12.506 19 11.259 19 9c0-3.859-3.141-7-7-7S5 5.141 5 9c0 2.285 1.067 3.528 2.101 4.73.358.418.729.851 1.084 1.349.144.206.38.996.591 1.921h-.792v2h8.032v-2h-.79c.213-.927.45-1.719.593-1.925.352-.503.726-.94 1.087-1.363z">
           </path>
         </svg> */}
-      </main>}
+      </main >}
     </>
   )
 }
