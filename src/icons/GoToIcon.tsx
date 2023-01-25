@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default function SeeIcon({ link }) {
+export default function SeeIcon({ link }: { link: string }) {
   return (
     <Link href={link}>
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" style={{ fill: "#FFFFFF", filter: "drop-shadow(5px 5px 15px #00000040)" }}>

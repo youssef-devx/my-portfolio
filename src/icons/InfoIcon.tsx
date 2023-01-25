@@ -1,6 +1,9 @@
 import { useState } from 'react'
 
-export default function InfoIcon({ info }) {
+export default function InfoIcon({ info } : { info: {
+  about: string;
+  createdAt: string;
+} }) {
   const [showInfo, setShowInfo] = useState(false)
 
   return (
@@ -10,9 +13,7 @@ export default function InfoIcon({ info }) {
       </svg>
 
       <div className={`project-description ${showInfo ? "visible" : "hidden"}`}>
-        <p>
-          {info.about}
-        </p>
+        <p>{info.about}</p>
       </div>
     </div>
   )

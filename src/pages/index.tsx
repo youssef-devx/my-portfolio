@@ -16,6 +16,7 @@ export default function Home() {
     document.onload = () => {
       setTimeout(() => setPreloading(false), 1500);
     };
+    // @ts-ignore
     document.onload();
 
     return () => (document.onload = null);

@@ -1,8 +1,7 @@
 import Logo from "@/icons/Logo";
 import { motion } from "framer-motion";
-import React from "react";
 
-export default function Preloader({ show }) {
+export default function Preloader({ show } : { show: boolean }) {
   return (
     <motion.div className={`preloader ${show ? "show" : "hidden"}`}>
       <Logo dark={true} />
