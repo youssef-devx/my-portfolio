@@ -1,12 +1,14 @@
+import React from 'react'
 import Figma from '../images/figma.png'
 import Js from '../images/js.png'
-import React from '../images/react.png'
+import ReactImg from '../images/react.png'
 import Nextjs from '../images/nextjs.png'
 import Firebase from '../images/firebase.png'
 import Tailwindcss from '../images/tailwindcss.png'
 import Nodejs from '../images/nodejs.png'
 import Expressjs from '../images/expressjs.png'
 import Mongodb from '../images/mongodb.png'
+import Image from "next/image"
 
 export default function TechStack() {
   return (
@@ -16,39 +18,39 @@ export default function TechStack() {
         <span className="border"></span>
         <span className="before"></span>
         <li>
-          <img src={Figma.src} alt="figma" />
+          <Image src={Figma.src} alt="figma" width={32} height={32} />
           <span>Figma</span>
         </li>
         <li>
-          <img src={Js.src} alt="javasript" />
+          <Image src={Js.src} alt="javasript" width={32} height={32} />
           <span>Javascript</span>
         </li>
         <li>
-          <img src={React.src} alt="react" />
+          <Image src={ReactImg.src} alt="react" width={32} height={32} />
           <span>React js</span>
         </li>
         <li>
-          <img src={Nextjs.src} alt="nextjs" />
+          <Image src={Nextjs.src} alt="nextjs" width={32} height={32} />
           <span>Next js</span>
         </li>
         <li>
-          <img src={Firebase.src} alt="firebase" />
+          <Image src={Firebase.src} alt="firebase" width={32} height={32} />
           <span>Firebase</span>
         </li>
         <li>
-          <img src={Tailwindcss.src} alt="tailwindcss" />
+          <Image src={Tailwindcss.src} alt="tailwindcss" width={32} height={32} />
           <span>Tailwind css</span>
         </li>
         <li>
-          <img src={Nodejs.src} alt="nodejs" />
+          <Image src={Nodejs.src} alt="nodejs" width={32} height={32} />
           <span>Node js</span>
         </li>
         <li>
-          <img src={Expressjs.src} alt="expressjs" />
+          <Image src={Expressjs.src} alt="expressjs" width={32} height={32} />
           <span>Express js</span>
         </li>
         <li>
-          <img src={Mongodb.src} alt="mongodb" />
+          <Image src={Mongodb.src} alt="mongodb" width={32} height={32} />
           <span>MongoDB</span>
         </li>
       </ul>

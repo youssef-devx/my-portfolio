@@ -1,15 +1,15 @@
 import { Inter } from '@next/font/google'
+import React from "react"
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function ContactMe() {
 
-  function onSend(e) {
+  function onSend(e: { preventDefault: () => void }) {
     e.preventDefault()
   }
 
-  return (
-    <div className='contact-me' id='contact-me'>
+  return <div className='contact-me' id='contact-me'>
       <h2>Contact Me</h2>
 
       <form onSubmit={onSend}>
@@ -32,7 +32,7 @@ export default function ContactMe() {
         <div className="form-group">
           <label htmlFor="description">Description:</label>
           <div className='input-container'>
-            <textarea required={true} rows={8} type="text" name='description'></textarea>
+            <textarea required={true} rows={8} name='description'></textarea>
             <span className="before"></span>
             <span className="border"></span>
           </div>
@@ -47,5 +47,5 @@ export default function ContactMe() {
         </button>
       </form>
     </div>
-  )
+  
 }
