@@ -1,21 +1,15 @@
 import InfoIcon from "@/icons/InfoIcon"
 import GithubIcon from "@/icons/GithubIcon"
 import GoToIcon from "@/icons/GoToIcon"
-import Image1 from "../images/Image1.png"
-import importedProjects from "@/projects"
-import { useState } from "react"
+import projects from "@/projects"
 import Image from "next/image"
 
 export default function PortfolioProjects() {
-  const [projects] = useState(importedProjects)
-
   return (
-    <div
-      className="projects animate-gradient"
-    >
+    <div className="projects animate-gradient">
       <span className="before"></span>
       <span className="border"></span>
-      {projects.slice(0, 4).map((project, idx) => (
+      {projects.map((project, idx) => (
         <div className="project" key={project.link + idx}>
           <span
             className="before"
@@ -24,7 +18,14 @@ export default function PortfolioProjects() {
             }}
           ></span>
           <span className="project-border"></span>
-          <Image src={Image1.src} alt="project image" width={310} height={255} quality={100} priority={false} />
+          <Image
+            src={project.image}
+            alt="project image"
+            width={310}
+            height={255}
+            quality={100}
+            priority={false}
+          />
           <div className="tech">
             {project.tech.map((tag) => (
               <span
