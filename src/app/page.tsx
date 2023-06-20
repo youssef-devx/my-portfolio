@@ -1,5 +1,4 @@
 "use client"
-import './globals.css'
 import Head from "next/head"
 import { Inter } from "@next/font/google"
 import { useEffect, useState } from "react"

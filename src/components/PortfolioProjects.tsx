@@ -38,9 +38,9 @@ export default function PortfolioProjects() {
             ))}
           </div>
           <div className="options">
-            <GoToIcon link={project.link} />
-            <GithubIcon link={project.github} />
-            <InfoIcon info={project.info} />
+            <GoToIcon link={project.link} projectColor={project.color} />
+            <GithubIcon link={project.github} projectColor={project.color} />
+            <InfoIcon info={{ ...project.info, projectColor: project.color }} />
           </div>
         </div>
       ))}

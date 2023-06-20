@@ -1,1 +1,2 @@
 - fix font importing
+- add credits section

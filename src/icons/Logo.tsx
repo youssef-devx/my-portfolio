@@ -34,7 +34,7 @@ export default function Logo({ dark }) {
           animate="visible"
           fill={fill}
           transition={{
-            duration: 1,
+            duration: 1.5,
             repeat: dark && Infinity,
             repeatType: "loop",
           }}

@@ -1,4 +1,4 @@
-export default [
+const projects = [
   {
     color: "#6767C3",
     image: "/Image1.png",
@@ -34,3 +34,5 @@ export default [
     tech: ["NEXTJS", "FIREBASE", "PAYPAL", "TAILWIND CSS"],
   },
 ]
+
+export default projects

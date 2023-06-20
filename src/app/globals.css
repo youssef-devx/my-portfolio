@@ -279,10 +279,9 @@ button .before {
 
 .project img {
   object-fit: cover !important;
-  width: "auto";
   /* width: 310px; */
   /* height: 255px; */
-  aspect-ratio: 5 / 4;
+  /* aspect-ratio: 5 / 4; */
   box-shadow: var(--shadow);
   border-radius: 10px;
   z-index: 1;
@@ -321,10 +320,6 @@ button .before {
   z-index: 4;
 }
 
-.options svg:hover {
-  background-color: #6767c3;
-}
-
 .project-info {
   position: relative;
   z-index: 4;
@@ -332,7 +327,7 @@ button .before {
 
 .project-description {
   position: absolute;
-  top: -6rem;
+  bottom: 1rem;
   right: calc(100% + 0.3rem);
   padding: 0.5rem;
   width: 10rem;
