@@ -1,0 +1,1 @@
+fix: preload animation, position of project description, hover color on porject info icon; delete: firebase package until needed
