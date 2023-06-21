@@ -1,2 +1,3 @@
 - fix font importing
 - add credits section
+- fix responsiveness

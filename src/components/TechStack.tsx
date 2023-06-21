@@ -1,6 +1,9 @@
 import React from 'react'
+import Vscode from '../images/vscode.png'
+import Git from '../images/git.png'
 import Figma from '../images/figma.png'
 import Js from '../images/js.png'
+import Ts from '../images/Ts.png'
 import ReactImg from '../images/react.png'
 import Nextjs from '../images/nextjs.png'
 import Firebase from '../images/firebase.png'
@@ -18,12 +21,24 @@ export default function TechStack() {
         <span className="border"></span>
         <span className="before"></span>
         <li>
+          <Image src={Vscode.src} alt="mongodb" width={32} height={32} />
+          <span>Vscode</span>
+        </li>
+        <li>
+          <Image src={Git.src} alt="mongodb" width={32} height={32} />
+          <span>Git</span>
+        </li>
+        <li>
           <Image src={Figma.src} alt="figma" width={32} height={32} />
           <span>Figma</span>
         </li>
         <li>
           <Image src={Js.src} alt="javasript" width={32} height={32} />
           <span>Javascript</span>
+        </li>
+        <li>
+          <Image src={Ts.src} alt="javasript" width={32} height={32} />
+          <span>Typescript</span>
         </li>
         <li>
           <Image src={ReactImg.src} alt="react" width={32} height={32} />
