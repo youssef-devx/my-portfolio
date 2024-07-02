@@ -26,6 +26,7 @@ export default function Home() {
   return <>
     <Head>
       <title>Devx | Portfolio</title>
+      <meta name="google-site-verification" content="gCR7MljD8MbDmiF-iZZ7sYEHCv1pFP-85BVAu7b_eH4" />
       <meta name="description" content="Devx portfolio" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.ico" />
