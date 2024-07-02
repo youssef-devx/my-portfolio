@@ -6,6 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Devx Portfolio',
   description: 'Devx portfolio',
+  'google-site-verification': 'gCR7MljD8MbDmiF-iZZ7sYEHCv1pFP-85BVAu7b_eH4'
 }
 
 export default function RootLayout({
