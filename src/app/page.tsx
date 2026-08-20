@@ -38,11 +38,9 @@ export default function Home() {
 
         <div className="content">
           <h1>
-            Looking for Web Development Collaboration?
+            Full-Stack Developer building web applications with React, Next.js, and Node.js.
             <br />
-            Whether you are a business owner or a
-            <br />
-            developer you are in the right place
+            Open to remote roles and Morocco-based opportunities.
           </h1>
           <div className="scroll-cta"></div>
           <PortfolioProjects />
