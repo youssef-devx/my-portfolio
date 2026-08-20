@@ -22,6 +22,6 @@
     "typescript": "5.2.2"
   },
   "engine": {
-    "node": "v22.18.0"
+    "node": "v24.14.0"
   }
 }
